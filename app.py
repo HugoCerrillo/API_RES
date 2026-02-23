@@ -6,6 +6,12 @@ import os
 app = Flask(__name__)
 CORS(app) # Importante para que React pueda consultar la API
 
+
+@app.route('/')
+def index():
+    return "API Funcionando correctamente"
+
+
 # Configuración de conexión (Obtén estos datos de tu consola de TiDB Cloud)
 db_config = {
     'host': 'gateway01.us-east-1.prod.aws.tidbcloud.com',
