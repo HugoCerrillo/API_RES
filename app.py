@@ -31,6 +31,13 @@ def get_usuarios():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/check', methods=['GET'])
+def check():
+    return jsonify({
+        "status": "online",
+        "mensaje": "Si ves esto, tu API en Render funciona. Si falla lo demás, es la base de datos."
+    }), 200
+
 if __name__ == '__main__':
     # Esto permite que Render elija el puerto dinámicamente
     port = int(os.environ.get("PORT", 5000))
