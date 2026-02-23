@@ -10,7 +10,7 @@ CORS(app) # Importante para que React pueda consultar la API
 db_config = {
     'host': 'gateway01.us-east-1.prod.aws.tidbcloud.com',
     'username': '4EpEm4BSHmLBBsU.root',
-    'password': 'fQXvQOaUHsAPA9k8',
+    'password': os.environ.get('DB_PASSWORD'),
     'database': 'prueba',
     'port': 4000,    
 }
