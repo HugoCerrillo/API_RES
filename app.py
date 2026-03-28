@@ -11,6 +11,11 @@ CORS(app) # Importante para que React pueda consultar la API
 def index():
     return "API Funcionando correctamente"
 
+# endpoint para que no se muera la api en 15 minutos (limitaciones de render)
+@app.route('/api/health')
+def health_check():
+    return {"status": "awake"}, 200
+
 
 # Configuración de conexión (Obtén estos datos de tu consola de TiDB Cloud)
 db_config = {
